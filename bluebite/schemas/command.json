@@ -1,0 +1,59 @@
+{
+	"$id": "http://example.com/example.json",
+	"type": "object",
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"properties": {
+		"vendor_id": {
+			"$id": "/properties/vendor_id",
+			"type": "string",
+			"title": "The Vendor_id Schema ",
+			"default": "",
+			"examples": ["76a96528d84544bb9213f122ca55cf3d"]
+		},
+		"tags": {
+			"$id": "/properties/tags",
+			"type": "array",
+			"items": {
+				"$id": "/properties/tags/items",
+				"type": "object",
+				"properties": {
+					"tag_id": {
+						"$id": "/properties/tags/items/properties/tag_id",
+						"type": "string",
+						"title": "The Tag_id Schema ",
+						"default": "",
+						"examples": ["812027ed872a45208bd55a6fefa819c1"]
+					},
+					"metadata": {
+						"$id": "/properties/tags/items/properties/metadata",
+						"type": "array",
+						"items": {
+							"$id": "/properties/tags/items/properties/metadata/items",
+							"type": "object",
+							"properties": {
+								"key": {
+									"$id": "/properties/tags/items/properties/metadata/items/properties/key",
+									"type": "string",
+									"title": "The Key Schema ",
+									"default": "",
+									"examples": ["type"]
+								},
+								"value": {
+									"$id": "/properties/tags/items/properties/metadata/items/properties/value",
+									"type": "string",
+									"title": "The Value Schema ",
+									"default": "",
+									"examples": ["shoe"]
+								}
+							},
+							"required": ["key", "value"]
+						}
+					}
+				},
+				"required": ["metadata", "tag_id"]
+			}
+		}
+	},
+	"required": ["vendor_id", "tags"]
+}

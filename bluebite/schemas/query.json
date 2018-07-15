@@ -1,0 +1,23 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "properties": {
+        "key": {
+            "$id": "/properties/tags/items/properties/metadata/items/properties/key",
+            "type": "string",
+            "title": "The Key Schema ",
+            "default": "",
+            "examples": ["type"]
+        },
+        "value": {
+            "$id": "/properties/tags/items/properties/metadata/items/properties/value",
+            "type": "string",
+            "title": "The Value Schema ",
+            "default": "",
+            "examples": ["shoe"]
+        }
+    },
+    "required": ["key", "value"]
+}
