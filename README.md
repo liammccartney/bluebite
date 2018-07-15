@@ -5,7 +5,7 @@ Vendors are sending us JSON payloads containing Tags and their Metadata.
 This API is an attempt to store and retrieve those Tags. 
 
 ## JSON Schema
-See schema.json, and json_payloads/
+See bluebite/validation/schema.json, and tests/json_payloads/
 
 ## Functionality
 1. Accept JSON Payloads via HTTP RESTful routes
@@ -22,4 +22,28 @@ See schema.json, and json_payloads/
 - Submit assignment to a version control repository accessible to Blue Bite
 
 ## Setup
-- TBD!
+It's recommended that you set up and activate a new virtualenvironment before running this application.
+See https://virtualenv.pypa.io/en/stable/ for more details.
+Please ensure that you have Postgresql installed.
+
+### macOS
+```bash
+$ brew install postgresql
+$ brew services start postgresql # if you want postgresql to start up at login
+```
+
+### Linux (Debian)
+```bash
+$ sudo apt-get install postgresql-9.4 postgresql-client-9.4
+```
+
+Once Postgres is running and you've activated your virtual environment you can simply execute
+```bash
+$ ./bin/setup-and-run
+```
+and the smart tag API will be up and running on localhost:5000
+
+
+## Notes
+- The way the API is currently implemented is not efficient for large payloads. If I had more foresight and time I would implement an asynchronous workflow to handle saving Tags and Meta data to the database. I think a Celery and Rabbit solution would work nicely.
+- I opted to use custom Postgresql connection and session management rather than Flask-SQLAlchemy. I did this because it's more familiar to me. 
