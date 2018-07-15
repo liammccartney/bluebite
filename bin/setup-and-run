@@ -1,0 +1,15 @@
+#!/bin/bash
+
+pip install -r requirements.txt
+
+export FLASK_ENV=development
+export FLASK_APP=bluebite/app.py
+export PG_USER=''
+export PG_PASSWORD=''
+export PG_HOST=localhost
+export DB_NAME=bluebite
+
+createdb $DB_NAME
+alembic upgrade head
+
+flask run
