@@ -43,6 +43,12 @@ $ ./bin/setup-and-run
 ```
 and the smart tag API will be up and running on localhost:5000
 
+## Test
+Inside your virtualenvironment run the following.
+```bash
+$ pip install -r tests/requirements.txt
+$ pytest
+```
 
 ## Notes
 - The way the API is currently implemented is not efficient for large payloads. If I had more foresight and time I would implement an asynchronous workflow to handle saving Tags and Meta data to the database. I think a Celery and Rabbit solution would work nicely.
